@@ -24,10 +24,7 @@ This app removes the green screen from both images and videos and replaces it wi
 
 ### 1. Clone the repository:
 
-```bash
-git clone https://github.com/yourusername/green-screen-remover.git
-cd green-screen-remover
-```
+`git clone https://github.com/yourusername/green-screen-remover.git`
 
 Install the dependencies using the command:
 
