@@ -1,9 +1,9 @@
 import streamlit as st
 
-# Title of the app
+# title
 st.title("Green Screen Remover App")
 
-# Provide navigation options to the user
+# home page content
 st.markdown("""
     Remove the background of your green screen images or videos and overlay them over another image using this app. 
     #### Select an Option:
@@ -12,6 +12,7 @@ st.markdown("""
     ## Media Player:
 """)
 
+# media player
 video_file =  st.file_uploader("Upload your video", type=["mp4", "mov", "avi"])
 
 if video_file:

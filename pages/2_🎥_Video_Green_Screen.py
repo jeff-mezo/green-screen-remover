@@ -1,10 +1,10 @@
 import streamlit as st
 from utils.video_processing import remove_green_screen_video
 
-# Title for the page
+# title
 st.title("Green Screen Remover for Videos")
 
-# Upload a video with green screen and background image
+# upload a video with green screen and background image
 uploaded_video = st.file_uploader("Upload a video with green screen", type=["mp4", "avi"])
 uploaded_video_background = st.file_uploader("Upload background image for video", type=["jpg", "png"])
 
@@ -23,9 +23,9 @@ if uploaded_video is not None and uploaded_video_background is not None:
     
     start_video_processing = st.button("Start Video Processing")
     
-    # Save uploaded files to local directory
+    # save uploaded files to local directory
     if start_video_processing:
-        # Save uploaded files to local directory
+        # save uploaded files to local directory
         video_path = 'videos/uploaded_video.mp4'
         video_background_path = 'images/video_background_image.jpg'
 
@@ -35,15 +35,15 @@ if uploaded_video is not None and uploaded_video_background is not None:
         with open(video_background_path, "wb") as f:
             f.write(uploaded_video_background.getbuffer())
 
-        # Output video path
+        # output video path
         output_video_path = 'videos/output_video.mp4'
 
-        # Show loading spinner while processing the video
+        # show loading spinner while processing the video
         with st.spinner('Processing video...'):
-            # Call the function to process the video and remove the green screen
+            # call the function to process the video and remove the green screen
             remove_green_screen_video(video_path, video_background_path, output_video_path)
 
-        # After processing, show the processed video
+        # after processing, show the processed video
         st.success("Video processed successfully!")
-        # Display the path where the video is saved
+        # display the path where the video is saved
         st.video(output_video_path)
